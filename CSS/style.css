@@ -1,270 +1,253 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-size: 13px;
-    background-color: hsl(210, 46%, 95%);
-    font-family: sans-serif;
-    height: 100vh;
+body {
+  font-size: 13px;
+  background-color: hsl(210, 46%, 95%);
+  font-family: sans-serif;
+  height: 100vh;
 }
 
-h1{
-    margin-bottom: 1em;
-    color: hsl(217, 19%, 35%);
-    font-size: 2em;
+h1 {
+  margin-bottom: 1em;
+  color: hsl(217, 19%, 35%);
+  font-size: 2em;
 }
 
-h2{
-    font-size: 1em;
-    color: hsl(217, 19%, 35%);
+h2 {
+  font-size: 1em;
+  color: hsl(217, 19%, 35%);
 }
 
-p{
-    line-height: 1.5em;
-    font-size: 1em;
-    color: hsl(214, 17%, 51%)
+p {
+  line-height: 1.5em;
+  font-size: 1em;
+  color: hsl(214, 17%, 51%);
 }
 
-.wrapper{
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: 100%;
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main-container {
+  display: flex;
+  position: relative;
+  height: 70%;
+  width: 100%;
+}
+
+.main__img {
+  width: 100%;
+
+  border-radius: 10px 0 0 10px;
+  background-image: url(/images/drawers.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.text {
+  margin-bottom: 2em;
+}
+
+.wrapper__description {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 0 20px 20px 0;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.profile__info {
+  display: flex;
+}
+
+.active-state {
+  background-color: hsl(217, 19%, 35%);
+  display: flex;
+  width: 220px;
+  padding: 2em;
+  border-radius: 1em;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  height: 70px;
+  left: 69%;
+  bottom: 30%;
+  display: none;
+  z-index: 1;
+}
+
+.active-state::before {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid hsl(217, 19%, 35%);
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  top: 100%;
+}
+
+.active-state p {
+  color: hsl(212, 23%, 69%);
+  font-size: 1em;
+  letter-spacing: 0.5em;
+  margin-right: 1em;
+}
+
+.michelle-img {
+  width: 40px;
+  border-radius: 100%;
+  margin-right: 1em;
+}
+
+.share {
+  padding: 1em;
+  border-radius: 100%;
+}
+
+.tw {
+  margin: 0 1em;
+}
+
+.share {
+  transition: background 1s;
+}
+
+.share:hover {
+  background: #6e8098;
+}
+
+.share,
+#share-button {
+  z-index: 5;
+}
+
+.share:hover svg path {
+  fill: #fff;
+}
+
+@media screen and (min-width: 1920px) {
+  .main-container {
     margin: 0 auto;
+    height: 400px;
+    width: 900px;
+  }
 }
 
-.main-container{
-    display: flex;
-    position: relative;
-    height: 40%;
-    width: 100%;
-}
-
-.main__img{
- width: 100%;
-
- border-radius: 10px 0 0 10px;
- background-image: url(/images/drawers.jpg);
-background-size: cover;
-background-repeat: no-repeat;
-
-}
-
-.text{
-    margin-bottom: 2em;
-}
-
-
-.wrapper__description{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    padding: 2em;
-    background-color: #fff;
-    border-radius: 0 20px 20px 0;
-}
-
-.profile{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-
-.profile__info{
-    display: flex;
-}
-
-.active-state{
+@media screen and (max-width: 800px) {
+  .active-state {
     background-color: hsl(217, 19%, 35%);
     display: flex;
-    width: 220px;
+    width: 100%;
     padding: 2em;
-    border-radius: 1em;
-    justify-content: space-evenly;
+    /* padding-top: 3em; */
+    border-radius: 0 0 20px 20px;
+    justify-content: start;
     align-items: center;
-    position: absolute;
-    height: 70px;
-    left: 69%;
-    bottom: 30%;
+    /* position: absolute; */
+    height: 65px;
+    left: 0px;
+    bottom: 0px;
     display: none;
-    z-index: 1;
+  }
+  .active-state::before {
+    display: none;
+  }
 }
 
-.active-state::before{
-    content: '';
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid hsl(217, 19%, 35%);
-    border-bottom: 5px solid transparent;
-    position: absolute;
-    top: 100%;
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+  .wrapper {
+    width: 80%;
+    height: 80%;
+  }
+  .active-state {
+    bottom: 55%;
+    left: 67%;
+  }
 }
 
-.active-state p{
-    color: hsl(212, 23%, 69%);
-    font-size: 1em;
-    letter-spacing: .5em;
-    margin-right: 1em;
+@media screen and (max-width: 800px) and (min-width: 360px) {
+  body {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .main-container {
+    flex-direction: column;
+    margin: 1em auto;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+
+  .wrapper__description {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 0 0px 20px 20px;
+  }
+
+  .main__img {
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+  }
 }
 
-.michelle-img{
-    width: 40px;
-    border-radius: 100%;
-    margin-right: 1em;
+@media screen and (max-width: 320px) {
+  body {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .main-container {
+    flex-direction: column;
+    margin: 1em auto;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+
+  .wrapper__description {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    height: 50%;
+    background-color: #fff;
+    border-radius: 0 0px 20px 20px;
+  }
+
+  .main__img {
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .active-state {
+    height: 90px;
+
+    display: none;
+  }
 }
-
-.share{
-    padding: 1em;
-    border-radius: 100%;
-}
-
-.tw{
-    margin: 0 1em;
-}
-
-.share{
-    transition: background 1s;
-}
-
-.share:hover{
-    background: #6E8098;
-}
-
-.share, #share-button{
-    z-index: 5;
-}
-
-
-
-.share:hover svg path{
-    fill: #fff;
-}
-
-
-
-@media screen and (min-width: 1920px){
-    .main-container{
-        height: 30%;
-    }
-}
-
-@media screen and (max-width: 800px){
-    .active-state{
-        background-color: hsl(217, 19%, 35%);
-        display: flex;
-        width: 100%;
-        padding: 2em;
-        /* padding-top: 3em; */
-        border-radius: 0 0 20px 20px;
-        justify-content: start;
-        align-items: center;
-        /* position: absolute; */
-        height: 65px;
-        left: 0px;
-        bottom: 0px;
-        display: none;
-    }   
-    .active-state::before{
-        display: none;
-    }
-
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1100px){
-    .wrapper{
-        width: 80%;
-        height: 80%;
-    }
-    .active-state{
-        bottom: 55%;
-        left: 67%;
-
-    }
-
-   
-}
-
-@media screen and (max-width: 800px) and (min-width: 360px){
-    body{
-        height: 100%;
-    }
-
-    h1{
-        font-size: 1.2em;
-    }
-
-    .main-container{
-        flex-direction: column;
-        margin: 1em auto;
-
-    }
-
-    .wrapper{
-        width: 90%;   
-        
-    }
-
-    .wrapper__description{
-        display: flex;
-        flex-direction: column;
-        padding: 2em;
-        height: 250px;
-        background-color: #fff;
-        border-radius: 0 0px 20px 20px;
-    }
-
-    .main__img{
-        height: 200px;
-        border-radius: 20px 20px 0 0;
-    }
-
-    
-
-
-}
-
-@media screen and (max-width: 320px){
-    body{
-        height: 100%;
-    }
-
-    h1{
-        font-size: 1.2em;
-    }
-
-    .main-container{
-        flex-direction: column;
-        margin: 1em auto;
-
-    }
-
-    .wrapper{
-        width: 90%;   
-        
-    }
-
-    .wrapper__description{
-        display: flex;
-        flex-direction: column;
-        padding: 2em;
-        height: 50%;
-        background-color: #fff;
-        border-radius: 0 0px 20px 20px;
-    }
-
-    .main__img{
-        height: 200px;
-        border-radius: 20px 20px 0 0;
-    }
-
-    .active-state{
-        height: 90px;
-
-        display: none;
-    }
-
-}
-
