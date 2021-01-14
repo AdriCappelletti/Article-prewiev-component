@@ -36,16 +36,17 @@ p {
   margin: 0 auto;
 }
 
+
 .main-container {
   display: flex;
   position: relative;
-  height: 70%;
-  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  width: 900px;
 }
 
 .main__img {
-  width: 100%;
-
+  width: 600px;
   border-radius: 10px 0 0 10px;
   background-image: url(/images/drawers.jpg);
   background-size: cover;
@@ -85,8 +86,8 @@ p {
   align-items: center;
   position: absolute;
   height: 70px;
-  left: 69%;
-  bottom: 30%;
+  left: 73%;
+  bottom: 38%;
   display: none;
   z-index: 1;
 }
@@ -141,11 +142,7 @@ p {
 }
 
 @media screen and (min-width: 1920px) {
-  .main-container {
-    margin: 0 auto;
-    height: 400px;
-    width: 900px;
-  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -166,6 +163,15 @@ p {
   }
   .active-state::before {
     display: none;
+  }
+
+  .main__img{
+    width: 100%;
+  }
+
+  .main-container{
+    height: 70%;
+    width: 100%;
   }
 }
 
